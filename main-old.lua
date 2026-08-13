@@ -22,20 +22,15 @@ local tileMetadata = Blendate("tiles/TileMetadata.json")
 local pivotX, pivotY = 5, 5
 
 ----------------TILES-----------------------
-local function addTile(name, tx, ty)
-    return {
-        img = tileMetadata:loadRotation("tiles/" .. name),
-        tx = tx,
-        ty = ty,
-        dx = tx - pivotX,
-        dy = ty - pivotY
-    }
 
-end
 
-table.insert(tiles, addTile("Wall1", 2, 3))
-table.insert(tiles, addTile("Wall1", 3, 3))
-
+----- WALL1
+tiles.Wall1 = {}
+tiles.Wall1.img = tileMetadata:loadRotation("tiles/Wall1")
+tiles.Wall1.tx = 0
+tiles.Wall1.dx = tiles.Wall1.tx - pivotX
+tiles.Wall1.ty = 0
+tiles.Wall1.dy = tiles.Wall1.ty - pivotY
 
 local sin, cos, crankAngle, crankChange, dx, dy
 local radAngle = 0
@@ -46,8 +41,6 @@ function pd.update()
     radAngle = math.rad(crankAngle * -1)
     sin = math.sin(radAngle)
     cos = math.cos(radAngle)
-    for i = 1, #tiles do
-        tiles[i].img[math.floor(crankAngle / 2) + 1]:draw(((tiles[i].dx * cos - tiles[i].dy * sin) * tilew) + 200, ((tiles[i].dy * cos + tiles[i].dx * sin) * tileh * ySquish) + 120)
-    end
     
+    tiles.Wall1.img[math.floor(crankAngle / 2) + 1]:draw(((tiles.Wall1.dx * cos - tiles.Wall1.dy * sin) * tilew) + 200, ((tiles.Wall1.dy * cos + tiles.Wall1.dx * sin) * tileh * ySquish) + 120)
 end
