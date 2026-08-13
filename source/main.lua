@@ -11,10 +11,12 @@ local gfx = playdate.graphics
 --- make tiles... well... tileable IN PROGRESS
 --- add dynamic loading
 --- make a bunch of tiles          IN PROGRESS
---- stress test blendate and maybe rewrite the library to ditch the animation objects and just store the imagetable, x, y, and R values (and maybe z?)
+--- stress test blendate and maybe rewrite the library to ditch the animation objects and just store the imagetable, x, y, and R values (and maybe z?) DONE
 --- scale models down (by 2?)      DONE
---- rewrite the framework          IN PROGRESS
-local tilew, tileh, ySquish = 30, 30, 0.7
+--- rewrite the framework          DONE
+--- figure out the tile offsets    URGENT
+
+local tilew, tileh, ySquish = 45, 45, 0.7
 local tiles = {}
 
 local tileMetadata = Blendate("tiles/TileMetadata.json")
@@ -33,16 +35,18 @@ local function addTile(name, tx, ty)
 
 end
 
+
+table.insert(tiles, addTile("Wall1", 3, 2))
+table.insert(tiles, addTile("Wall1", 2, 2))
 table.insert(tiles, addTile("Wall1", 2, 3))
 table.insert(tiles, addTile("Wall1", 3, 3))
-
 
 local sin, cos, crankAngle, crankChange, dx, dy
 local radAngle = 0
 function pd.update()
     gfx.clear()
     
-    crankAngle = pd.getCrankPosition()
+    crankAngle = -1 * pd.getCrankPosition()
     radAngle = math.rad(crankAngle * -1)
     sin = math.sin(radAngle)
     cos = math.cos(radAngle)
