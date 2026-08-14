@@ -33,6 +33,7 @@
     // Output directory for the compiled game bundle
     "playdate-debug.outputPath": "builds",
     "Lua.diagnostics.disable": [
-        "need-check-nil"
+        "need-check-nil",
+        "undefined-global"
     ]
 }

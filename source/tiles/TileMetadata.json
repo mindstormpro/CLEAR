@@ -1,5 +1,5 @@
 {
-  "Wall1": {
+  "Corner1": {
     "num_spritesheets": 6,
     "rows": 7,
     "cols": 5,
@@ -11,14 +11,5 @@
     "center_offset_x": 0,
     "center_offset_y": 28,
     "num_frames_utilized": 5
-  },
-  "mesh": {
-    "num_spritesheets": 0,
-    "rows": 4,
-    "cols": 4,
-    "fps": 50,
-    "start_angle": 0,
-    "end_angle": 359,
-    "num_frames_utilized": 0
   }
 }
