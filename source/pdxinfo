@@ -1,6 +1,6 @@
-name=Playtopia
+name=CLEAR
 author=Elio A
-description=not clash of clans
-bundleID=io.github.mindstormpro.playtopia
+description=A better game 
+bundleID=com.mindstormpro.CLEAR
 version=1.0.0
 buildNumber=1
