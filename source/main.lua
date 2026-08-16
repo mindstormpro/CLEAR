@@ -38,6 +38,10 @@ tiles:addTile("tiles/DeadEnd1", 4, 6, 0)
 tiles:addTile("tiles/Floor1", 3, 6, 0)
 tiles:addTile("tiles/Floor1", 3, 5, 0)
 tiles:addTile("tiles/Wall1", 4, 5, 0)
+tiles:addTile("tiles/Floor1", 3, 4, 0)
+tiles:addTile("tiles/Floor1", 4, 4, 0)
+tiles:addTile("tiles/Floor1", 5, 4, 0)
+tiles:addTile("tiles/Floor1", 6, 4, 0)
 
 
 function pd.update()

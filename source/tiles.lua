@@ -62,6 +62,7 @@ function tiles.addTile(self, path, tx, ty, rot)
         dy = ty - self.centerY
     }
     tempTile.w, tempTile.h = tempTile.img[1]:getSize()
+    print(tempTile.w / 2)
     table.insert(self.tileList, {tx, ty, 0})
     self.tilesArr[tx][ty] = tempTile
 end
@@ -76,8 +77,9 @@ function tiles.computeTiles(self)
         --- a bunch of math
         tempTile = self.tilesArr[self.tileList[i][1]][self.tileList[i][2]]
         tempTile.frame = (math.floor((crankAngle + tempTile.rot) / 2) + 1) % 180 + 1
-        tempTile.x, tempTile.y = ((tempTile.dx * cos - tempTile.dy * sin) * self.tilew) + 200, ((tempTile.dy * cos + tempTile.dx * sin) * self.tileh * self.ySquish) + 120 - tempTile.h
+        tempTile.x, tempTile.y = ((tempTile.dx * cos - tempTile.dy * sin) * self.tilew) + 200 - 32, ((tempTile.dy * cos + tempTile.dx * sin) * self.tileh * self.ySquish) + 120 - tempTile.h + 32
         tempTile.dist = math.floor((tempTile.dy * cos + tempTile.dx * sin) * 10000)
+        tiles.tileList[i][3] = tempTile.dist
     end
     self:sortTiles()
 end
