@@ -62,9 +62,9 @@ local function addTile(path, tx, ty, rot)
         x, ------ for the temp calculations each frame
         y, ------ ^^^
         frame, -- ^^^
+        dist,
         ty = ty,
         rot = rot * 90,
-        dist,
         dx = tx - centerX,
         dy = ty - centerY
     }
@@ -78,6 +78,10 @@ addTile("tiles/Corner1", 5, 5, 0)
 addTile("tiles/Wall1", 5, 6, 1)
 addTile("tiles/Wall1", 6, 5, 0)
 addTile("tiles/Floor1", 6, 6, 0)
+addTile("tiles/DeadEnd1", 4, 6, 0)
+addTile("tiles/Floor1", 3, 6, 0)
+addTile("tiles/Floor1", 3, 5, 0)
+addTile("tiles/Wall1", 4, 5, 0)
 
 local sin, cos, crankAngle, crankChange, dx, dy
 local radAngle = 0
@@ -103,7 +107,6 @@ function pd.update()
     sortTiles()
 
     for i = 1, #tileList do
-        --- a bunch of math
         tempTile = tiles[tileList[i][1]][tileList[i][2]]
         tempTile.img[tempTile.frame]:draw(((tempTile.dx * cos - tempTile.dy * sin) * tilew) + 200, ((tempTile.dy * cos + tempTile.dx * sin) * tileh * ySquish) + 120 - tempTile.h)
     end
