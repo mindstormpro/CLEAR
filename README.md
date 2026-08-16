@@ -1,4 +1,4 @@
-# CLEAR!
+# CLEAR! (Coming soon to a Playdate near you)
 clear is a tactical turn-based strategy game where you clear rooms of a level one-by-one by controlling the actions each squadmate makes.  
 Oh yeah, There's also wizards and fox people.
 
