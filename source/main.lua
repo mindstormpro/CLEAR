@@ -2,7 +2,7 @@ import "CoreLibs/object"
 import "CoreLibs/graphics"
 import "CoreLibs/sprites"
 import "CoreLibs/timer"
-import("blendate") -- not sure I can push this to github since it's a paid thingy, TODO: Ask
+import("blendate")
 local tiles = import("tiles")
 local pd = playdate
 local gfx = playdate.graphics
