@@ -1,4 +1,7 @@
----@diagnostic disable: param-type-mismatch
+--- all credits to osuika for this script 
+--- don't copy this, go buy blendate yourself!
+--- I slightly modified this script to output an imagetable instead of an animation object
+
 import("CoreLibs/graphics")
 import("CoreLibs/animation")
 import("CoreLibs/object")
